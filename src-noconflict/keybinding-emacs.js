@@ -901,8 +901,8 @@ exports.emacsKeys = {
     "Down|C-n"    : {command: "goorselect", args: ["golinedown","selectdown"]},
     "Left|C-b"    : {command: "goorselect", args: ["gotoleft","selectleft"]},
     "Right|C-f"   : {command: "goorselect", args: ["gotoright","selectright"]},
-    "C-Left|M-b"  : {command: "goorselect", args: ["gotowordleft","selectwordleft"]},
-    "C-Right|M-f" : {command: "goorselect", args: ["gotowordright","selectwordright"]},
+    "CMD-Left|M-b"  : {command: "goorselect", args: ["gotowordleft","selectwordleft"]},
+    "CMD-Right|M-f" : {command: "goorselect", args: ["gotowordright","selectwordright"]},
     "Home|C-a"    : {command: "goorselect", args: ["gotolinestart","selecttolinestart"]},
     "End|C-e"     : {command: "goorselect", args: ["gotolineend","selecttolineend"]},
     "C-Home|S-M-,": {command: "goorselect", args: ["gotostart","selecttostart"]},
@@ -920,7 +920,7 @@ exports.emacsKeys = {
 
     "C-l" : "recenterTopBottom",
     "M-s" : "centerselection",
-    "M-g": "gotoline",
+    "CMD-g g": "gotoline",
     "C-x C-p": "selectall",
     "C-Down": {command: "goorselect", args: ["gotopagedown","selectpagedown"]},
     "C-Up": {command: "goorselect", args: ["gotopageup","selectpageup"]},
@@ -934,7 +934,7 @@ exports.emacsKeys = {
 
     "M-C-s": "findnext",
     "M-C-r": "findprevious",
-    "S-M-5": "replace",
+    "S-CMD-5": "replace",
     "Backspace": "backspace",
     "Delete|C-d": "del",
     "Return|C-m": {command: "insertstring", args: "\n"}, // "newline"
@@ -945,7 +945,7 @@ exports.emacsKeys = {
     "C-k": "killLine",
 
     "C-y|S-Delete": "yank",
-    "M-y": "yankRotate",
+    "CMD-y": "yankRotate",
     "C-g": "keyboardQuit",
 
     "C-w|C-S-W": "killRegion",
@@ -961,10 +961,10 @@ exports.emacsKeys = {
 
     "M-;": "togglecomment",
 
-    "C-/|C-x u|S-C--|C-z": "undo",
-    "S-C-/|S-C-x u|C--|S-C-z": "redo", // infinite undo?
+    "C-/|C-x u|S-C--|C-z|C-S--": "undo",
+    "S-C-/|S-C-x u|C--|S-C-z|C--": "redo", // infinite undo?
     "C-x r":  "selectRectangularRegion",
-    "M-x": {command: "focusCommandLine", args: "M-x "}
+    "CMD-x": {command: "focusCommandLine", args: "M-x "}
 };
 
 
