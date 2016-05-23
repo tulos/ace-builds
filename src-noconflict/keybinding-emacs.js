@@ -872,7 +872,7 @@ exports.handler.handleKeyboard = function(data, hashId, key, keyCode) {
 
     if (!command.readOnly && editor.emacsMark())
         editor.setEmacsMark(null)
-        
+
     if (data.count) {
         var count = data.count;
         data.count = 0;
@@ -949,7 +949,7 @@ exports.emacsKeys = {
     "C-g": "keyboardQuit",
 
     "C-w|C-S-W": "killRegion",
-    "M-w": "killRingSave",
+    "CMD-w|M-w": "killRingSave",
     "C-Space": "setMark",
     "C-x C-x": "exchangePointAndMark",
 
@@ -1069,7 +1069,7 @@ exports.handler.addCommands({
         var line = editor.session.getLine(range.start.row);
         range.end.column = line.length;
         line = line.substr(range.start.column)
-        
+
         var foldLine = editor.session.getFoldLine(range.start.row);
         if (foldLine && range.end.row != foldLine.end.row) {
             range.end.row = foldLine.end.row;
