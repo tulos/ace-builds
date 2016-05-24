@@ -1452,7 +1452,7 @@ var Autocomplete = function() {
         "Ctrl-Up|Ctrl-Home": function(editor) { editor.completer.goTo("start"); },
         "Ctrl-Down|Ctrl-End": function(editor) { editor.completer.goTo("end"); },
 
-        "Esc": function(editor) { editor.completer.detach(); },
+        "Esc|Ctrl-g": function(editor) { editor.completer.detach(); },
         "Return": function(editor) { return editor.completer.insertMatch(); },
         "Shift-Return": function(editor) { editor.completer.insertMatch(null, {deleteSuffix: true}); },
         "Tab": function(editor) {
